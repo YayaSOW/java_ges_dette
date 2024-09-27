@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence 
+            http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd" version="2.1">
+    <persistence-unit name="mySQLUnit" transaction-type="RESOURCE_LOCAL">
+        <!-- JPA Provider -->
+        <provider>
+			org.hibernate.jpa.HibernatePersistenceProvider
+        </provider>
+        <!-- Specify the Entity classes that are mapped -->
+        <class>
+            org.example.data.entities.Client
+        </class>
+        <class>
+			org.example.data.entities.User
+        </class>
+        <!-- Enable Hibernate's automatic schema generation -->
+        <exclude-unlisted-classes>
+			true
+        </exclude-unlisted-classes>
+        <!-- JDBC connection settings -->
+        <properties>
+            <!-- Database connection -->
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/ges_dette" />
+            <property name="javax.persistence.jdbc.user" value="root" />
+            <property name="javax.persistence.jdbc.password" value="" />
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
+            <!-- Hibernate settings -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect" />
+            <property name="hibernate.hbm2ddl.auto" value="update" />
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.format_sql" value="true" />
+            <!-- Caching, pooling, and other optimizations -->
+            <property name="hibernate.cache.use_second_level_cache" value="false" />
+        </properties>
+    </persistence-unit>
+</persistence>
+

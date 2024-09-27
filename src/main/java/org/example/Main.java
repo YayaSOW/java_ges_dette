@@ -6,28 +6,16 @@ import org.example.data.entities.User;
 import org.example.data.enums.RoleEnum;
 import org.example.services.ClientService;
 import org.example.services.UserService;
+import javax.persistence.PersistenceException;
 
 import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-//        ClientRepository clientRepositoryList = new ClientRepositoryBDP();//BD PostegreSQL
-//        ClientRepository clientRepositoryList = new ClientRepositoryBD();//BD MySQL
-//        ClientRepository clientRepositoryList = new ClientRepositoryList();//List
-//        UserRepository userRepositoryList = new UserRepositoryList();
-        //
-//        ClientService clientServiceImp = new ClientServiceImp(clientRepositoryList);
-
         ServiceFactoryImpl serviceFactoryImpl = new ServiceFactoryImpl();
-//        ClientService clientServiceImp = new ClientServiceImp(Factory.getInstanceClientRepository());
         ClientService clientServiceImp = serviceFactoryImpl.getInstanceClientService();
-
-//        UserService userServiceImp = new UserServiceImp(userRepositoryList);
-
-//        UserService userServiceImp = new UserServiceImp(Factory.getInstanceUserRepository());
         UserService userServiceImp = serviceFactoryImpl.getInstanceUserService();
-
         Scanner scanner = new Scanner(System.in);
         int choice;
         do {
@@ -102,5 +90,6 @@ public class Main {
                 }
             }
         } while (choice != 6);
+        scanner.close();
     }
 }
