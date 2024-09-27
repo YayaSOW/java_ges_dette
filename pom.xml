@@ -45,5 +45,10 @@
             <artifactId>hibernate-entitymanager</artifactId>
             <version>5.6.1.Final</version>
         </dependency>
+        <dependency>
+            <groupId>javax.persistence</groupId>
+            <artifactId>javax.persistence-api</artifactId>
+            <version>2.2</version>            <!-- Vérifie la version -->
+        </dependency>
     </dependencies>
 </project>

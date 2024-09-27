@@ -9,7 +9,7 @@ import org.example.core.repository.Repository;
 
 public abstract class RepositoryJpaImp<T> implements Repository<T> {
     protected EntityManager em;
-    protected EntityManagerFactory emf = Persistence.createEntityManagerFactory("mySQLUnit");
+    EntityManagerFactory emf = Persistence.createEntityManagerFactory("mySQLUnit");
 
     public RepositoryJpaImp() {
         if (em==null) {

@@ -32,9 +32,15 @@ public class Client {
     @JoinColumn(name = "userId", nullable = true)
     private User user;
     //OneToMany (Client => Dette)
-    private List<Dette> dettes =new ArrayList<>();
+    // private List<Dette> dettes =new ArrayList<>();
 
     public Client() {
         id = ++nbreClient;
+    }
+
+    @Override
+    public String toString() {
+        return "Client [id=" + id + ", surname=" + surname + ", telephone=" + telephone + ", address=" + address
+                + ", user=" + user + "]";
     }
 }

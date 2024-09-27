@@ -6,6 +6,7 @@ import org.example.data.repositories.bdPG.ClientRepositoryBDP;
 import org.example.data.repositories.bdSQL.ClientRepositoryBD;
 import org.example.data.repositories.bdSQL.ClientRepositoryJpa;
 import org.example.data.repositories.bdSQL.UserRepositoryBD;
+import org.example.data.repositories.bdSQL.UserRepositoryJpa;
 import org.example.data.repositories.list.ClientRepositoryList;
 import org.example.data.repositories.list.UserRepositoryList;
 
@@ -14,13 +15,13 @@ public class RepositoryFactoryImpl {
     private UserRepository userRepository;
     public ClientRepository getInstanceClientRepository() {
         if (clientRepository == null) {
-            clientRepository = new ClientRepositoryBD();
+            clientRepository = new ClientRepositoryJpa();
         }
         return clientRepository;
     }
     public UserRepository getInstanceUserRepository() {
         if (userRepository == null) {
-            userRepository = new UserRepositoryBD();
+            userRepository = new UserRepositoryJpa();
         }
         return userRepository;
     }
