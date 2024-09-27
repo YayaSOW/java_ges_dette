@@ -6,7 +6,6 @@ import org.example.data.entities.User;
 import org.example.data.enums.RoleEnum;
 import org.example.services.ClientService;
 import org.example.services.UserService;
-import javax.persistence.PersistenceException;
 
 import java.util.List;
 import java.util.Scanner;

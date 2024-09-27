@@ -10,8 +10,7 @@ public class UserRepositoryJpa extends RepositoryJpaImp<User> implements UserRep
 
     @Override
     public List<User> selectAll() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'selectAll'");
+        return this.em.createQuery("SELECT u FROM User u", User.class).getResultList();
     }
 
     @Override
