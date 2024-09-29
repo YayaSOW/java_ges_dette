@@ -6,6 +6,7 @@ import lombok.Generated;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,17 +20,20 @@ import javax.persistence.Table;
 @Table(name = "client")
 public class Client {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @Column(length = 25, unique = true)
     private String surname;
+    @Column(length = 25, unique = true)
     private String telephone;
+    @Column(length = 25, unique = true)
     private String address;
     private static int nbreClient;
 
     // Navigabilite
     //OneToOne (Client => User)
     @OneToOne
-    @JoinColumn(name = "userId", nullable = true)
+    @JoinColumn(name = "\"userId\"", nullable = true)
     private User user;
     //OneToMany (Client => Dette)
     // private List<Dette> dettes =new ArrayList<>();

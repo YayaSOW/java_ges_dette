@@ -21,12 +21,15 @@ import org.hibernate.annotations.ColumnDefault;
 @Table(name = "user")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @Column(length = 25,unique = true)
     private String nom;
+    @Column(length = 25,unique = true)
     private String prenom;
+    @Column(length = 25,unique = true)
     private String login;
+    @Column(length = 25,unique = true)
     private String password;
     @Enumerated(EnumType.STRING)
     private RoleEnum role;
