@@ -52,8 +52,8 @@ public class Main {
                         user.setPassword(scanner.nextLine());
                         user.setEtat(true);
                         userServiceImp.create(user);
+                        cl.setUser(user);
                     }
-                    cl.setUser(user);
                     clientServiceImp.create(cl);
                 }
                 case 2 -> {

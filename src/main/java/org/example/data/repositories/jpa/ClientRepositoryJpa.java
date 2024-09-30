@@ -1,4 +1,4 @@
-package org.example.data.repositories.bdSQL;
+package org.example.data.repositories.jpa;
 
 import java.util.List;
 
@@ -8,14 +8,14 @@ import org.example.data.repositories.ClientRepository;
 
 public class ClientRepositoryJpa extends RepositoryJpaImp<Client> implements ClientRepository {
 
-    @Override
-    public List<Client> selectAll() {
-        return  this.em.createQuery("SELECT c FROM Client c", Client.class).getResultList();
+    public ClientRepositoryJpa() {
+        super(Client.class);
     }
 
     @Override
     public Client selectByTelephone(String telephone) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'selectByTelephone'");
+        return this.em.createQuery("SELECT c FROM Client c where c.telephone like :tel", Client.class)
+                .setParameter("tel", telephone)
+                .getSingleResult();
     }
 }

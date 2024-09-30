@@ -14,6 +14,15 @@
         <class>
 			org.example.data.entities.User
         </class>
+        <class>
+			org.example.data.entities.Dette
+        </class>
+        <class>
+			org.example.data.entities.Article
+        </class>
+        <class>
+			org.example.data.entities.Detail
+        </class>
         <!-- Enable Hibernate's automatic schema generation -->
         <exclude-unlisted-classes>
 			true
@@ -21,13 +30,13 @@
         <!-- JDBC connection settings -->
         <properties>
             <!-- Database connection -->
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/ges_dette" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/ges_dette2" />
             <property name="javax.persistence.jdbc.user" value="root" />
             <property name="javax.persistence.jdbc.password" value="" />
             <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
             <!-- Hibernate settings -->
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect" />
-            <property name="hibernate.hbm2ddl.auto" value="update" />
+            <property name="hibernate.hbm2ddl.auto" value="create" />
             <property name="hibernate.show_sql" value="true" />
             <property name="hibernate.format_sql" value="true" />
             <!-- Caching, pooling, and other optimizations -->

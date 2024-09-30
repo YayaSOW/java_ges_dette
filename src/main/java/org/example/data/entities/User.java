@@ -2,6 +2,7 @@ package org.example.data.entities;
 
 import lombok.Data;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -23,13 +24,13 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column(length = 25,unique = true)
+    @Column(length = 25)
     private String nom;
-    @Column(length = 25,unique = true)
+    @Column(length = 25)
     private String prenom;
-    @Column(length = 25,unique = true)
+    @Column(length = 25)
     private String login;
-    @Column(length = 25,unique = true)
+    @Column(length = 25)
     private String password;
     @Enumerated(EnumType.STRING)
     private RoleEnum role;
@@ -38,13 +39,14 @@ public class User {
     private static int nbreUser;
 
     //Navigabilite
-    @OneToOne
+    @OneToOne(mappedBy = "user")
     @JoinColumn(name = "clientId", nullable = true)
     private Client client;
 
     public User() {
         id = ++nbreUser;
     }
+
 
     @Override
     public String toString() {

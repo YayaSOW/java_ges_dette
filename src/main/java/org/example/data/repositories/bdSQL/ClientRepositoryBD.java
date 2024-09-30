@@ -115,6 +115,5 @@ public class ClientRepositoryBD extends RepositoryBDImp<Client> implements Clien
         User user = this.userRepository.selectById(userId);
         client.setUser(user);
         return client;
-
     }
 }

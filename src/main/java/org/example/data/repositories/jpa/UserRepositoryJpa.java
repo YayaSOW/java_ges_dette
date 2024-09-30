@@ -1,4 +1,4 @@
-package org.example.data.repositories.bdSQL;
+package org.example.data.repositories.jpa;
 
 import java.util.List;
 
@@ -8,9 +8,8 @@ import org.example.data.repositories.UserRepository;
 
 public class UserRepositoryJpa extends RepositoryJpaImp<User> implements UserRepository {
 
-    @Override
-    public List<User> selectAll() {
-        return this.em.createQuery("SELECT u FROM User u", User.class).getResultList();
+    public UserRepositoryJpa() {
+        super(User.class);
     }
 
     @Override
@@ -24,5 +23,5 @@ public class UserRepositoryJpa extends RepositoryJpaImp<User> implements UserRep
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'selectByLogin'");
     }
-    
+
 }
