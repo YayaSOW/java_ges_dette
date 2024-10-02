@@ -1,7 +1,5 @@
 package org.example.data.repositories.jpa;
 
-import java.util.List;
-
 import org.example.core.repository.impl.RepositoryJpaImp;
 import org.example.data.entities.Client;
 import org.example.data.repositories.ClientRepository;

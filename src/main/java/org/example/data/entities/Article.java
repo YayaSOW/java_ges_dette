@@ -9,7 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Data
@@ -24,10 +24,7 @@ public class Article {
     private int qteStock;
     private static int nbrArticles;
 
-    @ManyToMany(mappedBy = "articles")
-    private List<Dette> dettes = new ArrayList<>();
-
-    @ManyToMany(mappedBy = "article")
+    @OneToMany(mappedBy = "article")
     private List<Detail> details = new ArrayList<>();
 
     public Article(String libelle, double prix, int qteStock) {
@@ -46,9 +43,6 @@ public class Article {
                 '}';
     }
 
-    // Navigabilite
-    // OneToMany (Article => Detail)
-    // private List<Detail> details = new ArrayList<>();
     public Article() {
         id = ++nbrArticles;
     }

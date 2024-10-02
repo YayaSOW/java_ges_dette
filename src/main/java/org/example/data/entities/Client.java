@@ -35,7 +35,7 @@ public class Client {
 
     // Navigabilite
     //OneToOne (Client => User)
-    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
+    @OneToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST,CascadeType.MERGE})
     @JoinColumn(name = "userId", nullable = true)
     private User user;
     //OneToMany (Client => Dette)
