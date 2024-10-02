@@ -16,7 +16,7 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "dette")
+@Table(name = "dettes")
 public class Dette {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

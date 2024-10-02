@@ -1,7 +1,6 @@
 package org.example.data.entities;
 
 import lombok.Data;
-import lombok.Generated;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +19,7 @@ import javax.persistence.Table;
 
 @Data
 @Entity
-@Table(name = "client")
+@Table(name = "clients")
 public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

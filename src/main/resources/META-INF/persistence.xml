@@ -54,7 +54,16 @@
             org.example.data.entities.Client
         </class>
         <class>
-            org.example.data.entities.User
+			org.example.data.entities.User
+        </class>
+        <class>
+			org.example.data.entities.Dette
+        </class>
+        <class>
+			org.example.data.entities.Article
+        </class>
+        <class>
+			org.example.data.entities.Detail
         </class>
         <!-- Enable Hibernate's automatic schema generation -->
         <exclude-unlisted-classes>
@@ -70,8 +79,8 @@
             <!-- Hibernate settings -->
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
             <property name="hibernate.hbm2ddl.auto" value="update" />
-            <property name="hibernate.show_sql" value="true" />
-            <property name="hibernate.format_sql" value="true" />
+            <property name="hibernate.show_sql" value="false" />
+            <property name="hibernate.format_sql" value="false" />
             <!-- Caching, pooling, and other optimizations -->
             <!-- <property name="hibernate.cache.use_second_level_cache" value="false" /> -->
         </properties>

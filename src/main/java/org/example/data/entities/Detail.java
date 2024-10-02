@@ -11,7 +11,7 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "detail")
+@Table(name = "details")
 public class Detail {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -24,5 +24,4 @@ public class Detail {
 
     @ManyToOne
     private Dette dette;
-
 }

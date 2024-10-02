@@ -1,5 +1,5 @@
 persitence:
-  active_unit: "postgre"
-    units:
+  active_unit: "mysql"
+  units:
       mysql: "mysqlUnit"
       postgre: "postgresUnit"

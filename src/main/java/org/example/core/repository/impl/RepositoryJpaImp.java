@@ -5,14 +5,23 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 import org.example.core.repository.Repository;
+import org.example.core.services.YamlService;
+import org.example.core.services.impl.YamlServiceImp;
+
 import java.util.List;
+import java.util.Map;
 public abstract class RepositoryJpaImp<T> implements Repository<T> {
     protected EntityManager em;
-    private EntityManagerFactory emf = Persistence.createEntityManagerFactory("mysqlUnit");
+    // private EntityManagerFactory emf = Persistence.createEntityManagerFactory("mysqlUnit");
+    private EntityManagerFactory emf;
     protected Class<T> type;
+    YamlService yamlService;
 
     public RepositoryJpaImp(Class<T> type) {
-        if (em == null) {
+        if (em == null) { 
+            yamlService = new YamlServiceImp();
+            String persist = yamlService.getActivePersistenceUnit();
+            emf = Persistence.createEntityManagerFactory(persist);
             em = emf.createEntityManager();
         }
         this.type = type;

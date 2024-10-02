@@ -2,7 +2,6 @@ package org.example.data.entities;
 
 import lombok.Data;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -19,7 +18,7 @@ import org.hibernate.annotations.ColumnDefault;
 
 @Data
 @Entity
-@Table(name = "user")
+@Table(name = "users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
